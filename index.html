@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to my world</title>
+</head>
+<link rel="stylesheet" type="text/css" href="static/css/index.css"/>
+<!-- 引入JQuery -->
+<script src="static/js/jquery.min.js"></script>
+<!-- 鼠标点击特效 -->
+<script src="static/js/click-fun.js"></script>
+
+
+<body onclick="click_fun(event)">
+    <nav>
+        <div class="header-fixed">
+            <div class="nav-logo fleft"><span style="line-height: 60px;">老洋</span></div>
+            <div class="nav-menubar fright">
+                <ul id="nav-list">
+                    <li class="current"><a href="#">首页</a></li>
+                    <li><a href="#">每日日记</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="part_1">
+        <div class="part_1_title">
+            <div class="inner">
+                <h2>老洋生活</h2>
+            </div>
+            <div class="title">
+                <p>梦在远方</p>
+                <p>诗情画意</p>
+            </div>
+        </div>
+        <div class="guide">
+            <a href="javascript:void(0);">
+                <span class="down">
+                    <!-- svg矢量图 -->
+                    <svg viewBox="0 0 1792 1024" width="16" height="16">
+                        <path d="M21.824 126.208L834.624 998.656a92.672 92.672 0 0 0 126.976 0L1770.304 126.208C1819.2 77.568 1780.544 0 1706.816 0H85.312C11.84 0-27.328 77.312 21.824 126.208z" fill="#ffffff" p-id="3369"></path>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container" style="text-align:center">
+		
+			<a href="https://beian.miit.gov.cn/" style="color:red; text-decoration:none" rel="nofollow" target="_blank" title="链接关键词">湘ICP备2021005178号-1</a>
+        </div>
+    </footer>
+
+    <!-- 背景雪花特效 -->
+    <script src="static/js/snowflakes.min.js"></script>
+    <script src="static/js/snow_load.js"></script>
+    <!-- index.js -->
+    <script>
+        // 原生js写法
+        window.onload = function(){
+            // 设置点击nav-list的样式
+            let navUl = document.getElementById("nav-list");
+            let navLi = navUl.getElementsByTagName("li");
+            for(let index = 0; index < navLi.length; index++){
+                navLi[index].onclick = function(){
+                    for(let i = 0; i < navLi.length; i++){
+                        navLi[i].className = "";
+                    }
+                    this.className = "current";
+                };
+            }
+        }
+    </script>
+</body>
+</html>
